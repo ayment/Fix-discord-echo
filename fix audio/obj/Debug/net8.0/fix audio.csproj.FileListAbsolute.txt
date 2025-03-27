@@ -1,0 +1,22 @@
+D:\visual stdio code 2022 projects\fix audio\fix audio\bin\Debug\net8.0\fix audio.exe
+D:\visual stdio code 2022 projects\fix audio\fix audio\bin\Debug\net8.0\fix audio.deps.json
+D:\visual stdio code 2022 projects\fix audio\fix audio\bin\Debug\net8.0\fix audio.runtimeconfig.json
+D:\visual stdio code 2022 projects\fix audio\fix audio\bin\Debug\net8.0\fix audio.dll
+D:\visual stdio code 2022 projects\fix audio\fix audio\bin\Debug\net8.0\fix audio.pdb
+D:\visual stdio code 2022 projects\fix audio\fix audio\obj\Debug\net8.0\fix audio.GeneratedMSBuildEditorConfig.editorconfig
+D:\visual stdio code 2022 projects\fix audio\fix audio\obj\Debug\net8.0\fix audio.AssemblyInfoInputs.cache
+D:\visual stdio code 2022 projects\fix audio\fix audio\obj\Debug\net8.0\fix audio.AssemblyInfo.cs
+D:\visual stdio code 2022 projects\fix audio\fix audio\obj\Debug\net8.0\fix audio.csproj.CoreCompileInputs.cache
+D:\visual stdio code 2022 projects\fix audio\fix audio\obj\Debug\net8.0\fix audio.dll
+D:\visual stdio code 2022 projects\fix audio\fix audio\obj\Debug\net8.0\refint\fix audio.dll
+D:\visual stdio code 2022 projects\fix audio\fix audio\obj\Debug\net8.0\fix audio.pdb
+D:\visual stdio code 2022 projects\fix audio\fix audio\obj\Debug\net8.0\fix audio.genruntimeconfig.cache
+D:\visual stdio code 2022 projects\fix audio\fix audio\obj\Debug\net8.0\ref\fix audio.dll
+D:\visual stdio code 2022 projects\fix audio\fix audio\obj\Debug\net8.0\fix audio.csproj.AssemblyReference.cache
+D:\visual stdio code 2022 projects\fix audio\fix audio\bin\Debug\net8.0\NAudio.dll
+D:\visual stdio code 2022 projects\fix audio\fix audio\bin\Debug\net8.0\NAudio.Asio.dll
+D:\visual stdio code 2022 projects\fix audio\fix audio\bin\Debug\net8.0\NAudio.Core.dll
+D:\visual stdio code 2022 projects\fix audio\fix audio\bin\Debug\net8.0\NAudio.Midi.dll
+D:\visual stdio code 2022 projects\fix audio\fix audio\bin\Debug\net8.0\NAudio.Wasapi.dll
+D:\visual stdio code 2022 projects\fix audio\fix audio\bin\Debug\net8.0\NAudio.WinMM.dll
+D:\visual stdio code 2022 projects\fix audio\fix audio\obj\Debug\net8.0\fix audio.csproj.CopyComplete
