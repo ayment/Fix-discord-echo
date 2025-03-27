@@ -1,6 +1,7 @@
-﻿using System;
+using System;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
+using System.Threading;
 using NAudio.CoreAudioApi;
 
 class DiscordOutputMuter
@@ -13,32 +14,47 @@ class DiscordOutputMuter
     {
         ShowWindow(GetConsoleWindow(), SW_HIDE);
 
-        string[] Devices =
+        string[] targetDevices =
         {
             "Headphones (Arctis Nova Pro)",
             "SteelSeries Sonar - Microphone (SteelSeries Sonar Virtual Audio Device)"
         };
 
-        try
-        {
-            MMDeviceEnumerator enumerator = new MMDeviceEnumerator();
-            bool muted = false;
+        bool hMuted = false;
+        bool mMuted = false;
 
-            foreach (var deviceName in Devices)
+        while (!hMuted || !mMuted)
+        {
+            Thread.Sleep(1000); 
+
+            try
             {
-                MMDevice device = Devicething(enumerator, deviceName);
-                if (device != null)
+                using (MMDeviceEnumerator enumerator = new MMDeviceEnumerator())
                 {
-                    if (Mute(device)) muted = true;
+                    if (!hMuted)
+                    {
+                        var headphoneDevice = GetDevice(enumerator, targetDevices[0], DataFlow.Render);
+                        if (headphoneDevice != null && MuteDiscord(headphoneDevice))
+                        {
+                            hMuted = true;
+                        }
+                    }
+
+                    if (!mMuted)
+                    {
+                        var micDevice = GetDevice(enumerator, targetDevices[1], DataFlow.Render);
+                        if (micDevice != null && MuteDiscord(micDevice))
+                        {
+                            mMuted = true;
+                        }
+                    }
                 }
             }
-
-            if (muted) Environment.Exit(0);
+            catch {  }
         }
-        catch { /*idk*/ }
     }
 
-    static bool Mute(MMDevice device)
+    static bool MuteDiscord(MMDevice device)
     {
         bool muted = false;
         try
@@ -58,26 +74,26 @@ class DiscordOutputMuter
                         muted = true;
                     }
                 }
-                catch { /*idk*/ }
+                catch {  }
             }
         }
-        catch { /*idk*/ }
+        catch {  }
         return muted;
     }
 
-    static MMDevice Devicething(MMDeviceEnumerator enumerator, string targetName)
+    static MMDevice GetDevice(MMDeviceEnumerator enumerator, string deviceName, DataFlow flow)
     {
         try
         {
-            foreach (MMDevice device in enumerator.EnumerateAudioEndPoints(DataFlow.Render, DeviceState.Active))
+            foreach (MMDevice device in enumerator.EnumerateAudioEndPoints(flow, DeviceState.Active))
             {
-                if (device.FriendlyName.Trim().Equals(targetName, StringComparison.OrdinalIgnoreCase))
+                if (device.FriendlyName.Trim().Equals(deviceName, StringComparison.OrdinalIgnoreCase))
                 {
                     return device;
                 }
             }
         }
-        catch { /*idk*/ }
+        catch { }
         return null;
     }
 }
