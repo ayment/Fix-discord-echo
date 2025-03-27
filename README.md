@@ -12,7 +12,11 @@ The script closes itself after muting, keeping your system clean.
 # Installation:
 Download the executable or compile the C# code using Visual Studio.
 
-Add the .exe to shell:startup to run on boot (optional).
+(Optional) Run on Startup:
+
+Press Win + R, type shell:startup.
+
+Create a shortcut and set the path to the .exe file.
 
 
 # Requirements to Build
